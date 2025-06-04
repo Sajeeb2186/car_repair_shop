@@ -3,6 +3,38 @@ import Link from 'next/link'
 //import React from 'react'
 
 export default function Navbar() {
+
+  const navOptions=[
+
+    {
+      title:"Home",
+      path:"/"
+    },
+    {
+      title:"About",
+      path:"/about"
+    },
+    {
+      title:"Services",
+      path:"/services"
+    },
+    {
+      title:"Blog",
+      path:"/blog"
+    },
+    {
+      title:"Contact",
+      path:"/contact"
+    },
+
+
+
+
+  ]
+
+ 
+
+
   return (
     <div className='bg-base-100 text-slate-900 '>
            <div className="navbar con  shadow-sm    container mx-auto">
