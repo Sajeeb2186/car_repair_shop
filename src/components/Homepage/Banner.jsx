@@ -36,22 +36,38 @@ export default function Banner() {
   ];
 
   return (
-    <div className="carousel w-full h-screen">
-      {banners.map((banner,index) => (
-        <div key={index} id="slide1" className="carousel-item relative w-full">
+    <div className=" container mx-auto">
+      <div className="carousel  w-full ">
+      {
+      
+      banners.map((banner,index) => (
+        <div
+
+
+        style={{
+                backgroundImage: `linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1)), url(/assets/images/banner/${index + 1}.jpg)`
+             }}
+
+        
+        
+        
+        key={index} id={`slide${index+1}`} className="carousel-item relative w-full bg-top bg-no-repeat h-[90vh] rounded-xl">
           <div>
             <h2>Lorem ipsum dolor sit amet.</h2>
           </div>
           <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-            <a href="#slide4" className="btn btn-circle">
+            <a href={banner.prev} className="btn btn-circle">
               ❮
             </a>
-            <a href="#slide2" className="btn btn-circle">
+            <a href={banner.next} className="btn btn-circle">
               ❯
             </a>
           </div>
         </div>
-      ))}
+      ))
+      
+      }
+    </div>
     </div>
   );
 }
