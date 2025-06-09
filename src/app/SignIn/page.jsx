@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 export default function page() {
@@ -7,7 +8,7 @@ export default function page() {
       <div className='grid grid-cols-2 gap-12'>
 
         <div>
-          image
+          <Image src="/assets/images/login/login.svg" height="540" width="540"  alt='login image'/>
         </div>
 
         <div>
