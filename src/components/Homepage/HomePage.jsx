@@ -1,5 +1,6 @@
 import React from 'react'
 import Banner from './Banner'
+import Service from './Service'
 
 export default function HomePage() {
   return (
@@ -8,6 +9,8 @@ export default function HomePage() {
       
       
      <Banner></Banner>
+     <Service></Service>
+
     
     
     </div>

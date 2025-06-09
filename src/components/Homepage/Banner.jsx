@@ -36,7 +36,7 @@ export default function Banner() {
   ];
 
   return (
-    <div className=" container mx-auto">
+    <div className=" mx-40">
       <div className="carousel  w-full ">
       {
       
