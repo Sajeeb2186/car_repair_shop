@@ -16,9 +16,12 @@ export default function page() {
 
         <div>
           <fieldset className="fieldset">
+            <h2 className="text 4xl items-center">Sign in</h2>
             <legend className="fieldset-legend">Email</legend>
-            <input type="text" className="input" placeholder="Type here" />
-            <p className="label">Optional</p>
+            <input type="text" name="email" className="input" placeholder="Your Email" />
+            <legend className="fieldset-legend">Password</legend>
+            <input type="text" name="password" className="input" placeholder="Your Password" />
+            
           </fieldset>
         </div>
       </div>
