@@ -16,7 +16,7 @@ export default function page() {
 
         <div>
           <fieldset className="fieldset">
-            <legend className="fieldset-legend">What is your name?</legend>
+            <legend className="fieldset-legend">Email</legend>
             <input type="text" className="input" placeholder="Type here" />
             <p className="label">Optional</p>
           </fieldset>
