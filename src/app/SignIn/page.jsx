@@ -5,14 +5,14 @@ export default function page() {
   return (
     <div>
       <div className="grid grid-cols-2 gap-12">
-        {/* <div>
+        <div>
           <Image
             src="/assets/images/login/login.svg"
             height="540"
             width="540"
             alt="login image"
           />
-        </div> */}
+        </div>
 
         <div>
           <fieldset className="fieldset">
