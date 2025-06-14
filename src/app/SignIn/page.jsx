@@ -6,12 +6,12 @@ export default function page() {
     <div>
       <div className="grid grid-cols-2 gap-12">
         <div>
-          <Image
+          {/* <Image
             src="/assets/images/login/login.svg"
             height="540"
             width="540"
             alt="login image"
-          />
+          /> */}
         </div>
 
         <div>
