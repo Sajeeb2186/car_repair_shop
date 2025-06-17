@@ -76,6 +76,7 @@ export default function Navbar() {
       <a className="btn btn-outline btn-primary px-8">Appointment</a>
 
     </div>
+    <button className='btn btn-primary ml-4 '> <Link href={'/SignIn'}>Sign In</Link></button>
 
     
   </div>
