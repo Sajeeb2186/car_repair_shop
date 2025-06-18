@@ -45,7 +45,7 @@ export default function page() {
 
           
           <div>
-            <h6 className=" text-center my-4">or sign in with</h6>
+            {/* <h6 className=" text-center my-4">or sign in with</h6> */}
             <div className=" flex  items-center justify-center gap-2">
               <button className="btn"> <FcGoogle/></button>
               <button className="btn"> <FaGithub/></button>
