@@ -51,7 +51,7 @@ export default function page() {
               <button className="btn"> <FaGithub/></button>
             </div>
 
-            {/* <h6 className=" text-center my-4">Don't have accout? <Link className="text-primary font-semibold" href={'/SignUp'}>SignUp</Link></h6> */}
+            <h6 className=" text-center my-4">Don't have accout? <Link className="text-primary font-semibold" href={'/SignUp'}>SignUp</Link></h6>
 
           </div>
 
