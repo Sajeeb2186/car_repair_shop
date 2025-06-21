@@ -1,33 +1,59 @@
-import { MongoClient, ServerApiVersion } from "mongodb";
+// import { MongoClient, ServerApiVersion } from "mongodb";
 
 
-let db;
+// let db;
 
-export const connectDB=async()=>{
-if(db) return db;
+// export const connectDB=async()=>{
+// if(db) return db;
 
-try {
+// try {
 
-    const uri= process.env.NEXT_PUBLIC_MONGODB_URI;
-    const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  }
-});
+//     const uri= process.env.NEXT_PUBLIC_MONGODB_URI;
+//     const client = new MongoClient(uri, {
+//   serverApi: {
+//     version: ServerApiVersion.v1,
+//     strict: true,
+//     deprecationErrors: true,
+//   }
+// });
 
-db=client.db('car-doctor')
+// db=client.db('car-doctor')
 
-return db;
+// return db;
 
     
     
-} catch (error) {
+// } catch (error) {
 
-    console.log(error)
+//     console.log(error)
     
+// }
+
+
+// }
+
+
+
+
+
+
+import mongoose from "mongoose";
+
+
+const connectMongoDB=()=>{
+
+    try {
+
+        mongoose.connect(process.env.MONGODB_URI)
+        // console.log('connected to MongoDB')
+        
+    } catch (error) {
+
+        console.log(error)
+        
+    }
+
 }
 
 
-}
+export default connectMongoDB;
