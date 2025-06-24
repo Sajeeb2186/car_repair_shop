@@ -7,7 +7,42 @@ import { FcGoogle } from 'react-icons/fc'
 
 export default function page() {
 
-   const handlaLogin=async()=>{
+   const handleSignup=async(event)=>{
+
+      event.preventDefault();
+
+      const newUser={
+
+
+         name: event.target.name.value,
+         email: event.target.email.value,
+         password: event.target.password.value,
+         
+
+
+
+      }
+
+      console.log(newUser);
+
+      const resp= await fetch("http://localhost:3000/SignUp/api",{
+
+        method:"POST",
+        body:JSON.stringify(newUser),
+        headers:{
+          "content-type":"application/json",
+        }
+
+
+
+
+      })
+
+      if(resp.status===200){
+
+        event.target.reset();
+
+      }
 
   }
 
@@ -29,7 +64,7 @@ export default function page() {
 
           <h6 className="text-3xl font-semibold text-center mb-12">Sign Up</h6>
 
-          <form onSubmit={handlaLogin} action="">
+          <form onSubmit={handleSignup} action="">
              <label htmlFor="name"> Name:</label>
           <input type="text" name="name" placeholder="Your Name" className=" mt-3 input input-bordered w-full " />
           <br /><br />

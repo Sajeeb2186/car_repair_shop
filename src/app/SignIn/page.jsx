@@ -2,6 +2,8 @@
 "use client"
 import Image from "next/image";
 import React from "react";
+import {signIn} from "next-auth/react";
+
 import { FcGoogle} from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
@@ -10,6 +12,12 @@ export default function page() {
 
 
   const handlaLogin=async()=>{
+
+    event.preventDefault();
+    const email=event.target.email.value;
+    const password=event.target.password.value;
+
+    const resp= signIn("credentials",)
 
   }
 
