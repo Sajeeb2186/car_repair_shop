@@ -1,4 +1,5 @@
-import nextAuth from "next-auth/next";
+import { connectDB } from "@/lib/connectDB";
+import NextAuth from "next-auth/next";
 import CredintialsProviders from "next-auth/providers/credentials";
 
 
@@ -6,7 +7,7 @@ import CredintialsProviders from "next-auth/providers/credentials";
 
 
 
-const handler= async()=> NextAuth({
+const handler= NextAuth({
 
     session:{
         session:'jwt',
@@ -19,7 +20,15 @@ const handler= async()=> NextAuth({
                 password:{}
             },
             async authorize(credentials){
-                return true
+                
+                const {email,password}= credentials;
+
+                if(!email || !password){
+                    return null
+                }
+
+                const db=connectDB();
+                const currentUser= await db.collections('users').findOne({email})
             }
         })
     ],
@@ -30,3 +39,5 @@ const handler= async()=> NextAuth({
 
 
 })
+
+export {handler as GET, handler as POST}
