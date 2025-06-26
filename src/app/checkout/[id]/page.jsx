@@ -1,0 +1,26 @@
+import Image from 'next/image'
+import React from 'react'
+
+export default function page() {
+  return (
+     <div>
+              <div className="relative  h-72">
+                <Image
+                  className="absolute h-72 w-full left-0 top-0 object-cover"
+                  src={''}
+                  alt="service"
+                  width={1920}
+                  height={1080}
+                  style={{ width: "90vw" }}
+                />
+                <div className="absolute h-full left-0 top-0 flex items-center justify-center bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] ">
+                  <h1 className="text-white text-3xl font-bold flex justify-center items-center ml-8">
+                     Details of 
+                  </h1>
+                </div>
+              </div>
+    
+
+            </div>
+  )
+}
