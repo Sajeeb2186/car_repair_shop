@@ -1,3 +1,5 @@
+'use client'
+import { signOut, useSession } from 'next-auth/react';
 import Image from 'next/image'
 import Link from 'next/link'
 import { HiShoppingCart } from "react-icons/hi";
@@ -6,7 +8,12 @@ import { IoSearchSharp } from "react-icons/io5";
 
 export default function Navbar() {
 
-  const navItems=[
+
+  const session=useSession();
+  console.log(session);
+  
+
+const navItems=[
 
     {
       title:"Home",
@@ -33,6 +40,13 @@ export default function Navbar() {
 
 
   ]
+
+
+
+
+
+
+  
 
  
 
@@ -75,13 +89,29 @@ export default function Navbar() {
       <IoSearchSharp  className='text-xl'/>
       <a className="btn btn-outline btn-primary px-8">Appointment</a>
 
-    </div>
-    <button className='btn btn-primary ml-4 '> <Link href={'/SignIn'}>Sign In</Link></button>
+    
+     {!session.data?
+     <Link href="/SignIn" className='btn btn-primary px-8'>Login</Link>:
+     <button className='btn btn-primary px-8 ' onClick={()=>signOut()}> Logout</button>
 
+     }
+   
+   
+
+    
+
+
+   
     
   </div>
 </div>
     </div>
+
+    </div>
  
   )
+
+
 }
+
+

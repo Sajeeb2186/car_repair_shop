@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react'
 
 export default function ServiceCard( {service}) {
@@ -6,7 +7,7 @@ export default function ServiceCard( {service}) {
 
     
 
- const {title, img,price,descripttion}= service || {};
+ const {title, img,price,descripttion,_id}= service || {};
 
  console.log(title,price)
 
@@ -26,7 +27,9 @@ export default function ServiceCard( {service}) {
     
     <div className="card-actions justify-between items-center">
         <h6 className='text-primary font-semibold'> price:${price}</h6>
-      <button className="btn btn-primary">Buy Now</button>
+      {
+        <Link href={`/services/${_id}`}><button className="btn btn-primary">View Details</button></Link>
+      }
     </div>
   </div>
 </div>

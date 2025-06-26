@@ -7,23 +7,26 @@ import {signIn} from "next-auth/react";
 import { FcGoogle} from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function page() {
 
-
-  const handlaLogin=async()=>{
+  const router=useRouter();
+  const handlaLogin=async(event)=>{
 
     event.preventDefault();
     const email=event.target.email.value;
     const password=event.target.password.value;
 
-    const resp= signIn("credentials",{
+    const resp= await signIn("credentials",{
       email,
       password,
       redirect:false
     })
 
-    console.log(resp)
+     if (resp.status===200){
+      router.push('/')
+     }
 
   }
 
