@@ -15,7 +15,7 @@ export default function page() {
                 />
                 <div className="absolute h-full left-0 top-0 flex items-center justify-center bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] ">
                   <h1 className="text-white text-3xl font-bold flex justify-center items-center ml-8">
-                     Details of 
+                     Details 
                   </h1>
                 </div>
               </div>
