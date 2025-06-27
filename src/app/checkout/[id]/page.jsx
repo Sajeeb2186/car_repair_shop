@@ -79,7 +79,7 @@ export default async  function page({params}) {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Present Address</span>
+                {/* <span className="label-text">Present Address</span> */}
               </label>
               <input
                 type="text"
