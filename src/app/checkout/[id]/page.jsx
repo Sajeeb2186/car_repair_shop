@@ -1,11 +1,23 @@
+'use client'
+
+
 import { getServiceDetails } from '@/services/getServices';
 import Image from 'next/image'
 import React from 'react'
 
-export default async  function page({params}) {
+export default async  function Checkout({params}) {
 
-  // const details =await getServiceDetails(params.id)
-  //     const {_id, title, description, img, price, facility} = details;
+  const details =await getServiceDetails(params.id)
+      const {_id, title, description, img, price, facility} = details;
+
+
+
+
+      const handleBooking=async(event)=>{
+
+        event.preventDefault();
+
+      }
 
 
   return (
@@ -13,7 +25,7 @@ export default async  function page({params}) {
               <div className="relative  h-72">
                 <Image
                   className="absolute h-72 w-full left-0 top-0 object-cover"
-                  src={''}
+                  src={img}
                   alt="service"
                   width={1920}
                   height={1080}
@@ -21,13 +33,13 @@ export default async  function page({params}) {
                 />
                 <div className="absolute h-full left-0 top-0 flex items-center justify-center bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] ">
                   <h1 className="text-white text-3xl font-bold flex justify-center items-center ml-8">
-                     checkout of 
+                     checkout of {title}
                   </h1>
                 </div>
               </div>
 
               <div className=' my-12 bg-slate-300 p-12'>
-                <form >
+                <form onSubmit={handleBooking}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="form-control">
               <label className="label">
