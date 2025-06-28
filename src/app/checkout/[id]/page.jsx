@@ -2,22 +2,39 @@
 
 
 import { getServiceDetails } from '@/services/getServices';
+import { useSession } from 'next-auth/react';
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-export default async  function Checkout({params}) {
-
-  const details =await getServiceDetails(params.id)
-      const {_id, title, description, img, price, facility} = details;
+export default  function Checkout({params}) {
 
 
+      const {data}=useSession()
 
+ 
+
+      const [service,setService]=useState({})
+
+
+      const loadService=async()=>{
+         const details =await getServiceDetails(params.id)
+         setService(details.service)
+
+      }
+
+
+      const {_id, title, description, img, price, facility} = service || {};
 
       const handleBooking=async(event)=>{
 
         event.preventDefault();
 
       }
+
+
+      useEffect(()=>{
+        loadService()
+      },[params])
 
 
   return (
@@ -45,19 +62,21 @@ export default async  function Checkout({params}) {
               <label className="label">
                 <span className="label-text">Name</span>
               </label>
-              <input  type="text" name="name" className="input input-bordered" />
+              <input defaultValue={data?.user?.name}  type="text" name="name" className="input input-bordered" />
             </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Date</span>
               </label>
-              <input  type="date" name="date" className="input input-bordered" />
+              <input  defaultValue={new Date().getDate()} type="date" name="date" className="input input-bordered" />
             </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
               </label>
               <input
+
+                defaultValue={data?.user?.email} 
              
                 type="text"
                 name="email"
@@ -70,6 +89,8 @@ export default async  function Checkout({params}) {
                 <span className="label-text">Due amount</span>
               </label>
               <input
+
+              defaultValue={price}
               
               readOnly
                 type="text"
