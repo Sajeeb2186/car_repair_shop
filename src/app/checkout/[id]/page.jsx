@@ -23,7 +23,12 @@ export default  function Checkout({params}) {
       }
 
 
-      const {_id, title, description, img, price, facility} = service || {};
+      
+
+
+      const {_id, title, description, img, price, facility} = service || {} ;
+
+      //console.log(price)
 
       const handleBooking=async(event)=>{
 
@@ -90,8 +95,7 @@ export default  function Checkout({params}) {
               </label>
               <input
 
-              defaultValue={price}
-              
+              defaultValue={price || ""}
               readOnly
                 type="text"
                 name="price"
