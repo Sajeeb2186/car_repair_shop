@@ -28,7 +28,7 @@ export default  function Checkout({params}) {
 
       const {_id, title, description, img, price, facility} = service || {} ;
 
-      console.log(price)
+      //console.log(price)
 
       const handleBooking=async(event)=>{
 
