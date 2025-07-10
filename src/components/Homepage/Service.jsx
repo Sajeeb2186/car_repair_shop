@@ -1,3 +1,4 @@
+
 import React from "react";
 import SectionTitle from "../shared/SectionTitle";
 import ServiceCard from "../cards/ServiceCard";
@@ -15,7 +16,7 @@ export default async function Service() {
 
   const services=  await getServices();
 
-  //console.log(services)
+  console.log(services)
 
   return (
     <div>
